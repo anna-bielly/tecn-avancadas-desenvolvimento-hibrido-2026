@@ -10,13 +10,18 @@ import 'dart:io';
 // ?? significa se não der certo faz isso
 
 void main () {
-  stdout.write('Qual o valor da nota da prova?');
+  //Pergunta qual a nota
+  stdout.write('Qual a nota da prova?');
+  //Lê a nota
   String? valor1 = stdin.readLineSync();
+  //Transforma a nota em double
   double? prova = double.tryParse(valor1!) ?? 0.0;
 
   stdout.write('Qual a nota do trabalho?');
+  //Lê e converte a nota para double
   double? trabalho = double.tryParse(stdin.readLineSync()!) ?? 0.0;
-  
+
+  //Faz o calculo
   double? media = prova * 0.6 + trabalho * 0.4;
 
   stdout.write('A sua média é $media\n');
