@@ -15,12 +15,15 @@ void main() {
   stdout.write('\nDigite o código do pedido:');
   int? codigo = int.tryParse(stdin.readLineSync()!) ?? 0;
 
+  if (codigo > 106 || codigo < 101) {
+    stdout.write('Código inválido!\n');
+    return;
+  }
+
   stdout.write('\nDigite a quantidade do pedido:');
   int? quantidade = int.tryParse(stdin.readLineSync()!) ?? 0;
-  if (codigo > 106 && codigo < 101) {
-    print('Código inválido!');
-    return;
-  } else if (codigo == 101) {
+
+  if (codigo == 101) {
     double valor = quantidade * 14.20;
     print('\nTotal: $valor');
   } else if (codigo == 102) {
@@ -39,4 +42,5 @@ void main() {
     double valor = quantidade * 10.00;
     print('Total: $valor');
   }
-}
+
+  }

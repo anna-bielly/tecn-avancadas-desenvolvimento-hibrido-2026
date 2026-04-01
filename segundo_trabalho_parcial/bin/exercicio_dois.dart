@@ -13,10 +13,10 @@ void main() {
   double? codigo = double.tryParse(stdin.readLineSync()!) ?? 0;
 
   //Caso o código seja invalido
-  if (codigo > 5 && codigo == 0) {
+  if (codigo > 5 || codigo == 0) {
     stdout.write('\nNenhum desconto aplicado, produto importado ou codigo invalido\nPreço final: $preco\n');
   }
-  //Caso o código seja valido
+  //Caso o código seja valido1
   else if (codigo == 1) {
     double desconto = preco * 0.05;
     double preco_final = preco - desconto;
