@@ -11,6 +11,7 @@ void main() {
     int numero = int.tryParse(stdin.readLineSync()!) ?? 0;
     if (numero == 0) {
       zero = true;
+      quantidade--;
     }
     total = total + numero;
     quantidade++;
